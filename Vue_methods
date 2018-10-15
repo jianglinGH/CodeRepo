@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="app">
+			<a href="http://www.baidu.com" @click="handleClick('禁止打开',$event)">百度</a>
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#app",
+				methods:{
+					handleClick:function(message,event){
+						event.preventDefault()     
+						window.alert(message)
+					}
+				}
+			})
+		</script>
+		<!--$event是一个特殊变量
+			@click后面跟方法名/方法名(参数1,参数2)           --实参
+			
+			event.preventDefault()   阻止该变量的默认事件
+		-->
+	</body>
+</html>
