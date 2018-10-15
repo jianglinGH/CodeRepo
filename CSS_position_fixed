@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			height:1000px;
+
+		}
+		.box1{
+			width:100px;
+			height:100px;
+			background-color: red;
+		}
+		.box2{
+			width:100px;
+			height:100px;
+			background-color: deepskyblue;
+			position:fixed;
+			left:100px;
+		}
+	</style>
+	
+	<body>
+		<div class="box1"></div>	
+		<div class="box2"></div>
+	</body>
+	<!--固定定位  设置position:fixed;
+		使元素脱离文档流  
+		以浏览器窗口为对象进行定位
+		一直固定在屏幕的某个地方显示（比如：位置不随滚动条改变）
+	-->
+</html>
