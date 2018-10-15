@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				margin:20px 0;
+				width:300px;
+				height:300px;
+				background-color: pink;
+			}
+			p{
+				cursor:pointer;
+			}
+		</style>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn1").click(function(){
+					$("<p>我是一个p标签</p>").appendTo($(".box"))
+					$(".box").on("click","p",function(){
+						console.log("点击了p标签")
+					})
+				})
+				
+				$("#btn2").click(function(){
+					$("<p>我是另一个p标签</p>").appendTo($(".box"))
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="按钮1"/>
+		<input id="btn2" type="button" value="按钮2"/>
+	    <div class="box"></div>
+		<!--
+			添加一个子元素后 再添加一个元素为两个元素绑定相同的事件 
+			(如果绑定事件仅仅写一次，要写在第一个子元素后实现两个元素都有该绑定事件)
+			写法
+			父元素.on("事件名","子元素名",匿名函数 ) 触发父元素下所有该子元素事件
+			看jQuery内部代码  delegate方法调用了on方法
+		-->
+	</body>
+</html>
