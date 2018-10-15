@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="btn" type="button" value="关灯"/>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script>
+			$("#btn").click(function(){
+				if($("#btn").val() == "关灯") {
+				$("body").css("background-color","black")
+				$("#btn").val("开灯")
+			    }else{
+				$("body").css("background-color","")
+				$("#btn").val("关灯")
+			    }
+			    })
+		</script>
+		<!--jQuery中的写法
+			对象 $("#id")
+			对象的点击事件 $("#id").click(匿名函数)
+			元素的值 $("#id").val(--"值")
+			设置元素的css属性的值 $(元素).css("属性名","值")  写法可以是DOM操作的写法或css中的写法
+		-->
+	</body>
+</html>
