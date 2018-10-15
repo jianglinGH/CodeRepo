@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="app">
+			{{date|formatDate}}
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					date:new Date()
+				},
+				filters:{
+					formatDate:function(value){
+						var date = new Date(value) 
+						var hours = date.getHours()
+						var minutes = date.getMinutes()
+						var seconds = date.getSeconds()
+						if(minutes<10){
+							minutes = '0' + minutes 
+						}
+						if(seconds<10){
+							seconds = '0' + seconds
+						}
+						return hours + ':' + minutes + ':' + seconds   //返回值
+					}
+				},
+				mounted:function(){
+					var _this = this                          //声明对象指向当前对象 作用域一致
+					this.timer = setInterval(function(){      //对象的属性--定时器的名字 
+						_this.date = new Date()
+					},1000)},
+				beforeDestroy:function(){
+					if(this.timer){
+						clearInterval(this.timer)
+					}
+				}
+			})
+		</script>
+		
+	</body>
+	<!--
+		过滤   {{数据|过滤器名1|过滤器名2}}
+		获得格式化的时间  取出时分秒 格式化 -静态  作为过滤器 filters
+		定时器 -动态  挂载后   mounted 
+		清除定时器  实例销毁前 beforeDestory
+	-->
+</html>
