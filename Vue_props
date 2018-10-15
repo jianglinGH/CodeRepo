@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app1">
+		<!--	HTML不区分大小写 propA要写成prop-a -->
+			<my-component :prop-a='100'></my-component>
+			<my-component :prop-b='"Have a good day"'></my-component>
+			<my-component :prop-c='false'></my-component>
+			
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script type="text/javascript">
+			Vue.component('my-component',{
+				props:{propA:Number,
+				propB:[String,Number],
+				propC:{
+					type:Boolean,
+					default:true
+				}
+				},
+				template:'<p>{{propA}}--{{propB}}--{{propC}}</p>'
+			})
+			var vm1 = new Vue({
+				el:"#app1"                        
+			})
+		</script>
+        <!--props验证父组件传入的数据时 ，props里要写对象
+                如果父组件传入的数据和子组件中props规定的类型不一样，会报错 invalid expression-->
+	</body>
+</html>
