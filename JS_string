@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		var word="Hello"
+		word = word + " World"
+		console.log(word)
+		console.log(word.length)
+		var word2 = word.substring(4)            
+		console.log(word)
+		console.log(word2)
+		//不能为基本类型添加自定义的属性和方法  比如变量
+		word.color = 'blue'                      
+		console.log(word.color)                 
+		var age = 18
+		//要操作的数据类型.行为    变量.toSring()   可以变量添加 系统自带的方法
+		var ageAsString = age.toString();  
+		var ageAsString2 = age.toString(2);  //转为2进制
+		console.log(ageAsString)
+		console.log(ageAsString2)
+		var a = null
+		var b
+		console.log(String(a))
+		console.log(String(b))
+		//如果变量有意义，用变量名.toString()     null或undefined 用String(数据类型)
+		var value = '25'
+		var number = Number(value)
+		console.log(typeof number)      //typeof 基本类型名字   --显示类型名
+		var obj = new Number(value)          
+		console.log(typeof obj)
+		
+		//concat 连接方法
+		var stringvalue = 'Hello'
+		var result = stringvalue.concat(' Jack', ', how are you')
+		console.log(result)
+		
+//		split(分隔符,个数) 方法           个数为字符串长度 可选
+//		分隔字符串 split(" ")按空格分割 split("")单个字符分割 以数组的形式输出
+		var str_s = "How are you doing today"
+		console.log(str_s.split(" "))
+		console.log(str_s.split(""))
+		console.log(str_s.split(" ",3))
+		//reverse()方法  以数组的形式倒序输出多个字符或者数组中的元素
+		console.log(str_s.split(" ").reverse())
+		//join方法  以分隔符连接多个字符串/数组元素 用字符串的形式输出
+		console.log(str_s.split(" ").join(","))
+		
+		// + 进行字符串连接
+		var aa = '10';
+		var bb = 5
+		//字符串拼接数字为字符串
+		console.log(aa + bb)   
+		//隐式转换
+		console.log(aa - bb)   
+		//切片  slice, substring 不包括最后一项  substr 从第几位开始切N个 
+		console.log(word)
+		console.log(word.slice(3))
+		console.log(word.slice(3, 7))
+		console.log(word.substring(3, 7)) 
+		console.log(word.substr(3, 7)) 
+		//传入负数    字符串的索引           0  1  2 ...  -3  -2  -1
+		console.log(word.slice(-3))
+		console.log(word.substr(-3))
+		
+		//slice、substr 负数 + 字符串长度开始
+		
+		//substring 将负数变为0
+		console.log(word.substring(-3))   
+		//slice 3到-4
+		console.log(word.slice(3, -4))   
+		//substring将负数变为0  （0， 3）
+		console.log(word.substring(3, -4))
+		//substr将负数变为0，截取长度为0
+		console.log(word.substr(3, -4))       
+		
+		//indexOf和lastIndexOf 从左往右找位置，从右往左找索引
+		console.log(word.indexOf('o'))
+		console.log(word.lastIndexOf('o'))
+		//从索引6开始找
+		console.log(word.indexOf('o', 6))    
+		//从左到右找到'e'的位置 (找到位置--从左到右,位置+1    按数组输出)
+		var words= 'apple oranges bee leaf'
+		var positions = new Array()
+		var pos = words.indexOf('e')
+		while (pos > -1) {
+			positions.push(pos)               //把第一个位置推进数组
+			pos = words.indexOf('e',pos + 1)  //从当前位置+1开始找
+ 		}
+	    console.log(positions)
+		
+		//修剪 trim :去除前后缀的空格
+		var value = '   hello world  '
+		var trimmedvalue = value.trim() 
+		console.log(value)
+		console.log(trimmedvalue)
+		 
+		//toUpperCase toLocaleUpperCase toLowerCase toLocaleLowerCase  
+		//根据地区的  toLocaleUpperCase toLocaleLowerCase
+		console.log(word.toUpperCase())
+		console.log(word.toLocaleUpperCase())
+		console.log(word.toLowerCase())
+		console.log(word.toLocaleLowerCase())
+				
+		//变量名.match(正则表达式名)    相当于    正则表达式名.exec(变量名)
+		var text1 = 'cat, bat, sat, fart'
+		var pattern = /.at/
+		//返回数组
+		var matches = text1.match(pattern)     
+		console.log(matches[0])
+		console.log(matches.index)
+		console.log(pattern.lastIndex)
+		
+        //replace  如果都替换，请用正则表达式，而且指定全局变量
+        var text2 = 'cat, bat, sat, fat'
+	    var replacedtext2 = text2.replace(/.at/, 'ond')
+	    //变量名.replace(正则表达式,字符串)
+	    var replacedText2 = text2.replace(/.at/g, 'ond')   
+	    console.log(text2)
+	    console.log(replacedtext2)
+	    console.log(replacedText2)
+	  
+	    //变量名.split(字符串/正则表达式,--参数) 
+	    var splittext2 = text2.split(',', 3)
+	    var splittext3 = text2.split('bat')
+	    console.log(splittext2)
+	    console.log(splittext3)
+	    
+	    //match('字符串')  match(正则表达式)
+        var words = "Hello,Nice to meet you."
+        console.log(words.match("meet"))
+        
+	   
+	    //compare 比较字符串的大小  由小到大值为-1
+	    var stringvalue = 'yellow'
+	    //字符串.localeCompare(比较的字符串)
+	    console.log(stringvalue.localeCompare('zoo'))  
+	    function comparestringvalue(value){  
+	    	//用>0表示 原字符串在后面， <0原字符串在前面
+	    	if (stringvalue.localeCompare(value) < 0){
+	    		console.log('Yellow comes before ' + value)
+	    	}
+	    	if (stringvalue.localeCompare(value) > 0){
+	    		console.log('Yellow comes after ' + value)
+	    	}
+	    	else {
+	    		console.log('Yellow is equal to ' + value)
+	    	}
+	    }
+	    comparestringvalue('afl')
+	    
+	    
+	    //fromCharCode(字符解码)和charCodeAt(字符编码)相反   数码
+	    var letter = 'e'
+	    console.log(letter.charCodeAt())
+	    console.log(String.fromCharCode(104, 101, 108, 108, 111))
+	    //字符串名.chatAt(位置)  找该位置的字符
+	    console.log(word.charAt(1))
+	    
+	    //前后加指的是自加的位置
+	    var number_a = 5
+	    var number_b = number_a++   //++在后面，是为后加      先赋值，再自加
+	    console.log(number_a)
+	    console.log(number_b)
+	    
+	    var number_c = 10
+	    var number_d = ++number_c   //++在前面，是为前加      先自加，再赋值
+	    console.log(number_c)
+	    console.log(number_d)
+	    
+	    console.log('12'*6)
+	    </script>
+	    
+	</body>
+</html>
