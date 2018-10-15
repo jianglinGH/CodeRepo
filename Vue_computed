@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app1">
+			 
+		</div>
+		<div id="app2">
+			{{reverseText}}
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script>
+			var vm1 = new Vue({
+				el:"#app1",
+				data:{
+					text:"Tom,Mike,Alice"
+				}
+			});
+			var vm2 = new Vue({
+				el:"#app2",
+				computed:{
+					reverseText:function(){
+						return vm1.text.split(",").reverse().join(",")
+					}
+				}
+			})
+		</script>
+		<!--一个实例的computed属性可以依赖另一个实例的数据
+			两个Vue实例不能挂载在同一个元素内
+		-->
+	</body>
+</html>
