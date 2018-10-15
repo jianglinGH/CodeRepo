@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+    <style type="text/css">
+    	.box1{
+    		width:200px;
+    		height:200px;
+    		background-color:pink;
+    		
+    	}
+    	.box2{
+    		width:200px;
+    		height:200px;
+    		background-color:cornflowerblue;
+    		position:relative;
+    	}
+    	.box3{
+    		width:200px;
+    		height:200px;
+    		background-color:green;
+    		position:absolute;
+    		left:200px;
+    		top:100px;
+    	}
+    </style>
+	<body>
+		<div class="box1"></div>
+		<div class="box2">
+			<div class="box3"></div>
+		</div>
+		<!--绝对定位   以离自己最近的开启了定位的祖先元素或者浏览器窗口为对象进行定位（与边框比较）
+			position absolute
+			left/right/top/bottom:Npx 或者 N% --与某元素的某边框距离Npx
+		        绝对定位的特点
+		        绝对定位会使元素脱离文档流   使原内联元素变成块元素 原块元素被内容撑开
+		        绝对定位会使元素提升一个层级（覆盖）
+		-->
+	</body>
+</html>
