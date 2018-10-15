@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="延时输出" onclick="Myfunction()" />
+		<script>
+			function output(){
+				console.log("hello world")
+			}
+			function Myfunction(){
+				setTimeout("output()",3000)
+			}
+		</script>
+		<!--setTimeout 设置时延
+			setTimeout(code,millsec,lang)
+		-->
+	</body>
+</html>
