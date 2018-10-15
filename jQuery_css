@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width:400px;
+				border:1px green solid;
+			}
+			p{
+				margin:20px 20px;
+			}
+		</style>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					$(".box>p:odd").css("backgroundColor","#0000FF")
+					$(".box>p:even").css("backgroundColor","#FF0000")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input id="btn" type="button" value="隔行变色"/>
+		<div class="box">
+			<p>大师兄，师傅被妖怪抓走啦</p>
+			<p>二师兄，师傅被妖怪抓走啦</p>
+			<p>大师兄，师傅和小白龙被妖怪抓走啦</p>
+			<p>大师兄，师傅、二师兄和小白龙被妖怪抓走啦</p>
+			<p>二师兄，师傅和大师兄被妖怪抓走啦</p>
+		</div>
+		<!--隔行的写法
+			父元素>子元素:odd   奇数行
+			父元素>子元素:even  偶数行
+		-->
+	</body>
+</html>
