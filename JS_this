@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//this函数的指向在调用时确定
+			//1. this被函数调用，指代全局对象
+			function test(){
+				this.x = 1;          //this.变量名=变量名  将该变量指向全局对象
+			    console.log(this.x+1)
+			}
+		    test()
+		    console.log(x)           //一定要先调用函数 全局变量才会生效
+		    console.log(this.x)   
+		    
+		    //2. this作为对象的方法调用，指代上级对象
+		    var obj = {
+		    	x:5,
+		    	test:function(){
+		    		console.log(this)      //指向obj对象
+		    	}
+		    }
+		    obj.test()
+		    var fn = function(){
+		    	console.log(this)        //本级fn 上级window
+		    }
+		    fn()
+		    
+		    //3. this作为构造函数调用，指向new出的对象
+		     var fun = function (status){
+			  this.status = status;
+			 }
+			 fun.prototype.get_status = function(){   //自定义对象的方法
+			   return this.status;
+			 }
+			 var test = new fun('my status');
+			 console.log(test.get_status());          //new了一个对象，调用方法
+	
+	        //4.apply 调用 ，apply方法作用是改变函数的调用对象，
+	        //此方法的第一个参数为改变后调用这个函数的对象，this指代第一个参数
+	        function func(a,b,c){
+	        	var sum = a+b+c
+	        	console.log(this)
+	        }
+	        var object1={
+	        	id:1
+	        }
+	        func.apply(object1,[1,2,3])   //指向object1
+		</script>
+	</body>
+</html>
