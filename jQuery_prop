@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css"></style>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					$("#r3").prop("checked",true)
+					console.log($("#r5").prop("checked"))
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input id="btn" type="button" value="按钮"/>
+		<br /><br />
+		喜欢吃的食物
+		<input type="checkbox" id="r1" name="food" value="rice" />米饭
+		<input type="checkbox" id="r2" name="food" value="noodles" />面条
+		<input type="checkbox" id="r3" name="food" value="steak" />牛排
+		<input type="checkbox" id="r4" name="food" value="sandwich" />三明治
+		<input type="checkbox" id="r5" name="food" value="salad" checked="checked"/>色拉
+		<!--
+			对象.prop("checked",Boolean值)     用于设置有没有选中
+			对象.prop("checked")               用于判断是否选中  选中true 没选择false
+		-->
+	</body>
+</html>
