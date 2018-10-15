@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box1{
+			width:100px;
+			height:100px;
+			background-color: red;
+		}
+		.box2{
+			width:100px;
+			height:100px;
+			background-color: lawngreen;
+			position:relative;
+			left:50px;
+			top:100px;
+		}
+		.box3{
+			width:100px;
+			height:100px;
+			background-color: deepskyblue;
+		}
+	</style>
+	
+	<body>
+		<div class="box1"></div>	
+		<div class="box2"></div>
+		<div class="box3"></div>	
+		<!--相对定位  目的：为了使元素再不影响其他元素的情况下移动位置
+			属性position 可设置的值有 static(默认，静止) relative(相对) absolute(绝对) fixed(固定)
+			然后，可设置的属性有：left right top bottom 相对于本身块的某一边偏移Npx
+			relativa相对定位的特点：
+			元素不会脱离文档流
+			相对定位相对的对象时自身的初始位置
+			相对定位的元素比一般元素高一个层次
+			相对定位不会改变元素本身的性质 （内联还是内联，块还是块）
+		-->
+	</body>
+</html>
