@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{
+			    margin:0;
+			    padding:0;
+		    }
+		    li{
+		    	list-style:none;
+		    	float:left;
+		    	margin:5px;
+		    }			
+		    img{
+		    	height:100px;
+		    	width:100px;
+		    }
+	 	</style>
+        <script src="js/jquery-1.12.1.js"></script>                
+		<script type="text/javascript">
+			$(function(){
+				$("li").click(function(){
+					$(this).hide(700);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ul id="cat">
+			<li><img src="img/animation2/cat1.jpg" /></li>
+			<li><img src="img/animation2/cat2.jpg" /></li>
+			<li><img src="img/animation2/cat3.jpg" /></li>
+			<li><img src="img/animation2/cat4.jpg" /></li>
+			<li><img src="img/animation2/cat5.jpg" /></li>
+			<li><img src="img/animation2/cat6.jpg" /></li>
+		</ul>
+    <!--点击图片隐藏-->
+	</body>
+</html>
