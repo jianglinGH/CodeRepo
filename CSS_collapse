@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				border:red 5px solid;
+				overflow: hidden;
+				zoom:1;
+			}
+			.box2{
+				width:100px;
+				height:100px;
+				background-color: yellow;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+		<!--高度塌陷
+			当子元素脱离文档流时，父元素会产生高度塌陷，为解决这个问题。
+			设置父元素overflow:hidden 相对定位时会有问题   IE6设置zoom:1
+		-->
+	</body>
+</html>
