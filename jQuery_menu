@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		li{
+			list-style: none;
+			cursor:pointer;    
+		}
+		a{
+			text-decoration: none;
+			color:black;
+		}
+		.box{
+			width:600px;   
+			height:400px;
+			margin:10px auto 0;
+			background-color: orange;	
+			overflow: hidden;        /*溢出部份隐藏*/
+		}
+		
+		.left{
+			width:100px;
+			height:400px;
+			float:left;
+		}
+		.center{
+			
+			width:400px;
+			height:400px;
+			float:left;
+		}
+		.right{
+			width:100px;
+			height:400px;
+		    float:left;
+		}
+		li{
+			line-height: 80px;
+			text-align: center;
+		}
+		li>a{
+			font:18px 华文彩云;
+		}
+	</style>
+	<script src="js/jquery-1.12.1.js"></script>
+	<script>
+		$(function(){
+            $(".left>li:even").css("backgroundColor","oranged")
+			$(".left>li:odd").css("backgroundColor","yellow")
+			$(".right>li:even").css("backgroundColor","oranged")
+			$(".right>li:odd").css("backgroundColor","yellow")
+			$(".left>li").mouseenter(function(){
+				$(".center>li").hide()
+				var index = $(this).index()     //当前对象的index
+			    $(".center>li:eq("+index+")").show()
+			    $(this).css("border","mediumpurple 2px solid")
+			    //元素:eq(N) 当前索引为N的元素
+			})
+			$(".left>li").mouseleave(function(){
+				$(this).css("border","")
+			})
+			$(".right>li").mouseenter(function(){
+				$(".center>li").hide()
+				var index_r = $(this).index()+5;
+				$(".center>li:eq("+index_r+")").show()
+				$(this).css("border","mediumpurple 2px solid")
+			})
+			$(".right>li").mouseleave(function(){
+			$(this).css("border","")
+			})
+
+		})
+	</script>
+</head> 
+<body>
+	<div class="box">
+		<ul class="left">
+				<li><a href="#">女式大衣</a></li>
+				<li><a href="#">女式裙子</a></li>
+				<li><a href="#">女式毛衣</a></li>
+				<li><a href="#">女式裤子</a></li>
+				<li><a href="#">女式T恤</a></li>
+		</ul>
+        <ul class="center">
+		<li><a href="#"><img src="img/pic/g-coat.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/g-dress.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/g-sweater.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/g-trousers.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/g-Tshirt.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/b-coat.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/b-jacket.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/b-jeans.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/b-scarf.jpg"></a></li>
+		<li><a href="#"><img src="img/pic/b-shoes.jpg"></a></li>
+		</ul>
+		<ul class="right">
+				<li><a href="#">男式大衣</a></li>
+				<li><a href="#">男式夹克</a></li>
+				<li><a href="#">男式牛仔裤</a></li>
+				<li><a href="#">男式围巾</a></li>
+				<li><a href="#">男式鞋子</a></li>
+		</ul>
+	</div>
+<!--点击文字显示图片--商品栏-->
+</body>
+
+</html>
