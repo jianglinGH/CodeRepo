@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width:100px;
+				height:100px;
+				border:2px red dotted;
+			}
+			.box2{
+				width:100px;
+				height:100px;
+				border:2px blue dotted;
+			}
+			.box3{
+				width:100px;
+				height:100px;
+				border:2px black dotted;
+			}
+		</style>
+		<script src="js/jquery-1.12.1.js"></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					$(".box1").html("<p>sheep</p>")
+					$(".box2").empty()
+					$(".box3").remove()
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input id="btn" type="button" value="按钮"/>
+		<div class="box1">
+			<p>sheep</p>
+			<p>lovely cat</p>
+		</div>
+		<div class="box2">
+			<p>dog</p>
+			<p>beautiful clothes</p>
+		</div>
+		<div class="box3"></div>
+		<!--清除元素
+			清除子元素            对象.html("html代码")
+			清空所有子元素     对象.html("")  对象.empty()
+			清空元素本身         对象.remove()
+		-->
+	</body>
+</html>
