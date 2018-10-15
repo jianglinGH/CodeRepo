@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<component :is="currentCompo"></component>
+			<input type="button" @click="changeCom('A')" value="组件A"/>
+			<input type="button" @click="changeCom('B')" value="组件B" />
+			<input type="button" @click="changeCom('C')" value="组件C" />
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:"#app",
+				data:{
+					currentCompo:'comA'
+				},
+				components:{
+					comA:{
+						template:'<div>组件A的内容</div>'
+					},
+					comB:{
+						template:'<div>组件B的内容</div>'
+					},
+					comC:{
+						template:'<div>组件C的内容</div>'
+					}
+				},
+				methods:{
+					changeCom:function(name){
+						this.currentCompo = 'com' + name
+					}
+				}
+			})
+			</script>
+		<!--用is来动态选择要挂载的组件名
+			<component :is="组件名"></component>
+		-->
+	</body>
+</html>
