@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+                //冒泡排序     元素会按从大到小/从小到大的顺序慢慢浮到顶端。
+            //循环体 ：    
+            //数组.length-1 轮             --相当于行 ，用外循环控制
+            //每轮比较length-1,length-2..length-(length-1)   --列。用内循环控制
+            /*
+             5 4 3 2 1  从小到大排序  
+        第一轮       4 3 2 1 5  第一个数向后面的数比较     数组.length-1-0  次
+        第二轮      3 2 1 4 5  第一个数向后面的数比较     数组.length-1-1  次
+        第三轮     2 1 3 4 5  第一个数向后面的数比较     数组.length-1-2  次
+        第四轮    1 2 3 4 5  第一个数向后面的数比较     数组.length-1-3  次     */
+            //用冒泡排序法比较[321,24,52,15,61,45,2,61] 从小到大排序
+            var numbersArray = [321,24,52,15,61,45,2,61];
+            for(var m=0;m<numbersArray.length-1;m++){      //控制行     <
+            	for(var n=0;n<numbersArray.length-1-m;n++){         //控制列     <
+            		if(numbersArray[n+1]<numbersArray[n]){
+            			var temp = numbersArray[n];     //相邻元素满足..则互相位置
+            			numbersArray[n] = numbersArray[n+1];
+            			numbersArray[n+1] = temp;
+            		}
+            	}
+            }
+            console.log(numbersArray)
+		</script>
+	</body>
+</html>
