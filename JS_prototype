@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function Person(name){
+				this.name = name;
+				this.sayHi = function(){
+					return 'Hello, ' + this.name
+				}
+				this.eat = function(){
+					return 'He eats a lot'
+				}
+			}
+			var someone = new Person('Jame')   //对象名= new 对象类型(实参)  --对象类型即方法名
+		    var anotherone = new Person('Mike')
+			console.log(someone.eat===anotherone.eat)  
+			
+			Person.prototype={
+				constructor:Person,
+				age: function(){
+					return 'He is a young man'
+				}
+			}
+			var p1 = new Person('小A')
+			var p2 = new Person('小B')
+			console.log(p1.age===p2.age)
+			
+			console.log(someone.name)      //对象名.属性
+			console.log(someone.sayHi())   //对象名.方法
+			console.dir(someone)   //实例对象的结构     --对象名
+			console.dir(Person)    //构造对象的结构     --函数
+		</script>
+		<!--原型继承
+	          使用new..
+		    创建一个空对象 
+		     以新对象代替this,执行构造函数，初始化新对象的属性 obj._proto_=constructor.prototype  
+		         constructor指向函数本身
+		    返回该对象
+		  最顶层的对象是Object.prototype  
+      
+      构造函数、原型对象和实例对象三者之间的关系
+		  构造函数 下面包括了构造函数本身function ..()的性质{..}和原型对象（prototype）
+      原型对象 下面包括了对象的方法/属性（写在原型对象里的）和构造器（constructor），构造器指向了构造函数function ..()
+      实例对象 由构造函数创建 下面包括__proto__和实例对象的属性或方法
+		-->
+	</body>
+</html>
