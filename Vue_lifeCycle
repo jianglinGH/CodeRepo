@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" value="改变文本" @click="msg='HelloWorld.'"/>
+			<p id="para">{{msg}}</p>
+		</div>
+		<script src="js/vue-2.4.0.js"></script>
+		<script>
+			var vm = new Vue({
+				el:"#app",
+				data:{
+					msg:'Have a good day.'
+				},
+				beforeCreate:function(){
+					console.log('调用了beforeCreate钩子函数')
+				},
+				created:function(){
+					console.log('调用了created钩子函数')
+				},
+				beforeUpdate:function(){
+					console.log('调用了created钩子函数')
+				},
+				updated:function(){
+					console.log('调用了updated钩子函数')
+				},
+				beforeDestroy:function(){
+					console.log('调用了beforeDestory钩子函数')
+				},
+				destroyed:function(){
+					console.log('调用了destroyed钩子函数')
+				}
+			})
+		</script>
+		<!--
+			Vue实例的生命周期
+			new Vue() - beforeCreate - 创建Vue实例，初始化data,methods - created - 编译内存的代码
+			-beforeMount - 挂载到页面的元素中 - mounted - 内存中的数据改变
+			
+			-beforeUpdata - 更新内存中的数据，页面不变 - updated - 页面的数据重新挂载，渲染
+			
+			-beforeDestory - 销毁事件监听等 - destroyed - 销毁实例
+		-->
+	</body>
+</html>
